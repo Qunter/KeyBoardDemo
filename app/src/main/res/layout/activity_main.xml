@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ysdemo.keyboard.MainActivity" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/btn_showKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show"
+            />
+        <Button
+            android:id="@+id/btn_hideKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/btn_showKey"
+            android:text="hide"
+            />
+
+    </LinearLayout>
+
+    <!-- 密码显示框 -->
+    <LinearLayout
+        android:id="@+id/ll_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <com.ysdemo.keyboard.view.PasswordTextView
+            android:id="@+id/et_pwd1"
+            style="@style/style_edit" />
+
+        <com.ysdemo.keyboard.view.PasswordTextView
+            android:id="@+id/et_pwd2"
+            style="@style/style_edit"
+            android:layout_marginLeft="15dp" />
+
+        <com.ysdemo.keyboard.view.PasswordTextView
+            android:id="@+id/et_pwd3"
+            style="@style/style_edit"
+            android:layout_marginLeft="15dp" />
+
+        <com.ysdemo.keyboard.view.PasswordTextView
+            android:id="@+id/et_pwd4"
+            style="@style/style_edit"
+            android:layout_marginLeft="15dp" />
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:id="@+id/rl__keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" >
+
+        <com.ysdemo.keyboard.view.MyKeyboardView
+            android:id="@+id/keyboard_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#d8d8d8"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:keyBackground="@drawable/bg_keyboard_btn"
+            android:keyPreviewLayout="@layout/preview_keyboard"
+            android:keyTextColor="#333333"
+            android:paddingTop="1dp"
+            android:shadowColor="#ffffff"
+            android:shadowRadius="0.0" />
+    </RelativeLayout>
+
+</RelativeLayout>
